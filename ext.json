@@ -1,0 +1,18 @@
+{
+  "identifier": "com.jguernon.ega-theme",
+  "name": "EGA (DOS)",
+  "content_type": "SN|Theme",
+  "area": "themes",
+  "version": "1.0.0",
+  "description": "IBM EGA / DOS EDIT look: 16-color EGA palette, square corners, IBM VGA 8x16 font.",
+  "url": "https://cdn.jsdelivr.net/gh/jguernon/sn-ega-theme@1.0.0/dist/dist.css",
+  "download_url": "https://github.com/jguernon/sn-ega-theme/archive/refs/tags/1.0.0.zip",
+  "latest_url": "https://cdn.jsdelivr.net/gh/jguernon/sn-ega-theme@latest/ext.json",
+  "marketing_url": "https://github.com/jguernon/sn-ega-theme",
+  "dock_icon": {
+    "type": "circle",
+    "background_color": "#0000AA",
+    "foreground_color": "#FFFF55",
+    "border_color": "#AAAAAA"
+  }
+}

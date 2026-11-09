@@ -1,0 +1,171 @@
+/* EGA / DOS EDIT pour Standard Notes
+ * Palette EGA 16 couleurs, coins carrés, police PxPlus IBM VGA 8x16.
+ * Police : « The Ultimate Oldschool PC Font Pack » de VileR (int10h.org),
+ * CC BY-SA 4.0 ; intégrée ci-dessous par build.sh (base64).
+ */
+@font-face {
+  font-family: "EGA VGA";
+  src: url("data:font/ttf;base64,FONT_DATA") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* palette EGA */
+  --ega-black: #000000;
+  --ega-blue: #0000AA;
+  --ega-green: #00AA00;
+  --ega-cyan: #00AAAA;
+  --ega-red: #AA0000;
+  --ega-magenta: #AA00AA;
+  --ega-brown: #AA5500;
+  --ega-lightgray: #AAAAAA;
+  --ega-darkgray: #555555;
+  --ega-lightblue: #5555FF;
+  --ega-lightgreen: #55FF55;
+  --ega-lightcyan: #55FFFF;
+  --ega-lightred: #FF5555;
+  --ega-lightmagenta: #FF55FF;
+  --ega-yellow: #FFFF55;
+  --ega-white: #FFFFFF;
+
+  /* polices : tout en VGA */
+  --sn-stylekit-sans-serif-font: "EGA VGA", monospace;
+  --sn-stylekit-monospace-font: "EGA VGA", monospace;
+  --sn-stylekit-editor-font-family: "EGA VGA", monospace;
+  --sn-stylekit-general-border-radius: 0;
+
+  /* couleurs sémantiques */
+  --sn-stylekit-info-color: var(--ega-lightcyan);
+  --sn-stylekit-info-contrast-color: var(--ega-black);
+  --sn-stylekit-neutral-color: var(--ega-lightgray);
+  --sn-stylekit-neutral-contrast-color: var(--ega-black);
+  --sn-stylekit-success-color: var(--ega-lightgreen);
+  --sn-stylekit-success-contrast-color: var(--ega-black);
+  --sn-stylekit-warning-color: var(--ega-yellow);
+  --sn-stylekit-warning-contrast-color: var(--ega-black);
+  --sn-stylekit-danger-color: var(--ega-lightred);
+  --sn-stylekit-danger-contrast-color: var(--ega-black);
+
+  /* surfaces : fond bleu IBM comme DOS EDIT, colonnes noires */
+  --sn-stylekit-background-color: var(--ega-blue);
+  --sn-stylekit-foreground-color: var(--ega-lightgray);
+  --sn-stylekit-border-color: var(--ega-lightgray);
+  --sn-stylekit-shadow-color: var(--ega-black);
+  --sn-stylekit-contrast-background-color: var(--ega-black);
+  --sn-stylekit-contrast-foreground-color: var(--ega-white);
+  --sn-stylekit-contrast-border-color: var(--ega-lightgray);
+  --sn-stylekit-secondary-background-color: var(--ega-black);
+  --sn-stylekit-secondary-foreground-color: var(--ega-lightgray);
+  --sn-stylekit-secondary-border-color: var(--ega-lightgray);
+  --sn-stylekit-secondary-contrast-background-color: var(--ega-lightgray);
+  --sn-stylekit-secondary-contrast-foreground-color: var(--ega-black);
+  --sn-stylekit-secondary-contrast-border-color: var(--ega-lightgray);
+  --sn-stylekit-editor-background-color: var(--ega-blue);
+  --sn-stylekit-editor-foreground-color: var(--ega-white);
+  --sn-stylekit-paragraph-text-color: var(--ega-white);
+  --sn-stylekit-input-placeholder-color: var(--ega-lightgray);
+  --sn-stylekit-input-border-color: var(--ega-lightgray);
+
+  --sn-stylekit-scrollbar-thumb-color: var(--ega-lightgray);
+  --sn-stylekit-scrollbar-track-border-color: var(--ega-black);
+
+  --sn-stylekit-grey-1: var(--ega-lightgray);
+  --sn-stylekit-grey-2: var(--ega-lightgray);
+  --sn-stylekit-grey-3: var(--ega-darkgray);
+  --sn-stylekit-grey-4: var(--ega-darkgray);
+  --sn-stylekit-grey-4-opacity-variant: var(--ega-darkgray);
+  --sn-stylekit-grey-5: var(--ega-darkgray);
+  --sn-stylekit-grey-6: var(--ega-black);
+  --sn-stylekit-passive-color-3: var(--ega-darkgray);
+  --sn-stylekit-passive-color-4: var(--ega-black);
+  --sn-stylekit-passive-color-4-opacity-variant: #00000060;
+  --sn-stylekit-passive-color-5: var(--ega-black);
+
+  /* pastilles de couleur (étiquettes, notes) : les teintes vives EGA */
+  --sn-stylekit-accessory-tint-color-1: var(--ega-lightcyan);
+  --sn-stylekit-accessory-tint-color-2: var(--ega-lightmagenta);
+  --sn-stylekit-accessory-tint-color-3: var(--ega-yellow);
+  --sn-stylekit-accessory-tint-color-4: var(--ega-lightgreen);
+  --sn-stylekit-accessory-tint-color-5: var(--ega-lightred);
+  --sn-stylekit-accessory-tint-color-6: var(--ega-lightblue);
+
+  /* composants intégrés (éditeurs, plugins) */
+  --sn-component-foreground-color: var(--ega-lightgray);
+  --sn-component-background-color: var(--ega-blue);
+  --sn-component-foreground-highlight-color: var(--ega-yellow);
+  --sn-component-outer-border-color: var(--ega-lightgray);
+  --sn-component-inner-border-color: var(--ega-lightgray);
+
+  /* barre de titre de l'app de bureau */
+  --sn-desktop-titlebar-bg-color: var(--ega-blue);
+  --sn-desktop-titlebar-border-color: var(--ega-lightgray);
+  --sn-desktop-titlebar-ui-color: var(--ega-white);
+  --sn-desktop-titlebar-ui-hover-color: var(--ega-yellow);
+
+  /* zones précises */
+  --modal-background-color: var(--ega-blue);
+  --editor-header-bar-background-color: var(--ega-blue);
+  --editor-background-color: var(--ega-blue);
+  --editor-foreground-color: var(--ega-white);
+  --editor-title-bar-border-bottom-color: var(--ega-lightgray);
+  --editor-title-input-color: var(--ega-yellow);
+  --editor-pane-background-color: var(--ega-blue);
+  --editor-pane-editor-background-color: var(--ega-blue);
+  --editor-pane-component-background-color: var(--ega-blue);
+  --text-selection-color: var(--ega-blue);
+  --text-selection-background-color: var(--ega-lightgray);
+  --note-preview-progress-color: var(--ega-yellow);
+  --note-preview-progress-background-color: var(--ega-darkgray);
+  --note-preview-selected-progress-color: var(--ega-blue);
+  --note-preview-selected-progress-background-color: var(--ega-lightgray);
+  --items-column-background-color: var(--ega-black);
+  --items-column-items-background-color: var(--ega-black);
+  --items-column-border-left-color: var(--ega-lightgray);
+  --items-column-border-right-color: var(--ega-lightgray);
+  --items-column-search-background-color: var(--ega-black);
+  --item-cell-selected-background-color: var(--ega-lightgray);
+  --item-cell-selected-border-left-color: var(--ega-yellow);
+  --navigation-column-background-color: var(--ega-black);
+  --navigation-section-title-color: var(--ega-lightcyan);
+  --navigation-item-text-color: var(--ega-lightgray);
+  --navigation-item-count-color: var(--ega-darkgray);
+  --navigation-item-selected-background-color: var(--ega-blue);
+  --preferences-background-color: var(--ega-blue);
+  --preferences-navigation-icon-color: var(--ega-lightgray);
+  --preferences-navigation-selected-background-color: var(--ega-lightgray);
+  --dropdown-menu-radio-button-inactive-color: var(--ega-lightgray);
+  --panel-resizer-background-color: var(--ega-lightgray);
+  --link-element-color: var(--ega-lightcyan);
+}
+
+/* coins carrés partout */
+*, *::before, *::after {
+  border-radius: 0 !important;
+}
+
+/* la note sélectionnée : barre grise, texte noir (comme une sélection DOS) */
+.selected .name, .selected .note-preview, .selected .default-preview {
+  color: var(--ega-black) !important;
+}
+
+/* titres en jaune */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ega-yellow);
+}
+
+/* curseur jaune dans l'éditeur */
+textarea, input, [contenteditable="true"] {
+  caret-color: var(--ega-yellow);
+}
+
+/* code : cyan sur noir */
+code, pre {
+  background-color: var(--ega-black) !important;
+  color: var(--ega-lightcyan) !important;
+}
+
+/* barres de défilement carrées, épaisses, style DOS */
+::-webkit-scrollbar { width: 12px; height: 12px; background: var(--ega-black); }
+::-webkit-scrollbar-thumb { background: var(--ega-lightgray); border: 2px solid var(--ega-black); }
+::-webkit-scrollbar-corner { background: var(--ega-black); }
