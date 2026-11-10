@@ -47,8 +47,8 @@
   --sn-stylekit-danger-color: var(--ega-lightred);
   --sn-stylekit-danger-contrast-color: var(--ega-black);
 
-  /* surfaces : fond bleu IBM comme DOS EDIT, colonnes noires */
-  --sn-stylekit-background-color: var(--ega-blue);
+  /* surfaces : notes et colonnes sur fond noir ; bleu pour la sélection, les fenêtres et les préférences */
+  --sn-stylekit-background-color: var(--ega-black);
   --sn-stylekit-foreground-color: var(--ega-lightgray);
   --sn-stylekit-border-color: var(--ega-lightgray);
   --sn-stylekit-shadow-color: var(--ega-black);
@@ -61,7 +61,7 @@
   --sn-stylekit-secondary-contrast-background-color: var(--ega-lightgray);
   --sn-stylekit-secondary-contrast-foreground-color: var(--ega-black);
   --sn-stylekit-secondary-contrast-border-color: var(--ega-lightgray);
-  --sn-stylekit-editor-background-color: var(--ega-blue);
+  --sn-stylekit-editor-background-color: var(--ega-black);
   --sn-stylekit-editor-foreground-color: var(--ega-white);
   --sn-stylekit-paragraph-text-color: var(--ega-white);
   --sn-stylekit-input-placeholder-color: var(--ega-lightgray);
@@ -92,7 +92,7 @@
 
   /* composants intégrés (éditeurs, plugins) */
   --sn-component-foreground-color: var(--ega-lightgray);
-  --sn-component-background-color: var(--ega-blue);
+  --sn-component-background-color: var(--ega-black);
   --sn-component-foreground-highlight-color: var(--ega-yellow);
   --sn-component-outer-border-color: var(--ega-lightgray);
   --sn-component-inner-border-color: var(--ega-lightgray);
@@ -105,14 +105,14 @@
 
   /* zones précises */
   --modal-background-color: var(--ega-blue);
-  --editor-header-bar-background-color: var(--ega-blue);
-  --editor-background-color: var(--ega-blue);
+  --editor-header-bar-background-color: var(--ega-black);
+  --editor-background-color: var(--ega-black);
   --editor-foreground-color: var(--ega-white);
   --editor-title-bar-border-bottom-color: var(--ega-lightgray);
   --editor-title-input-color: var(--ega-yellow);
-  --editor-pane-background-color: var(--ega-blue);
-  --editor-pane-editor-background-color: var(--ega-blue);
-  --editor-pane-component-background-color: var(--ega-blue);
+  --editor-pane-background-color: var(--ega-black);
+  --editor-pane-editor-background-color: var(--ega-black);
+  --editor-pane-component-background-color: var(--ega-black);
   --text-selection-color: var(--ega-blue);
   --text-selection-background-color: var(--ega-lightgray);
   --note-preview-progress-color: var(--ega-yellow);
