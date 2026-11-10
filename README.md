@@ -5,7 +5,7 @@ An IBM EGA / MS-DOS EDIT look for [Standard Notes](https://standardnotes.com):
 - 16-color EGA palette: IBM blue editor, black columns, light-gray borders
 - yellow titles and caret, cyan links and code
 - square corners everywhere, chunky DOS scrollbars
-- the IBM VGA 8x16 font, embedded in the theme (nothing to install)
+- the IBM VGA 8x16 font. The desktop app blocks embedded fonts, so install `fonts/PxPlus_IBM_VGA_8x16.ttf` on your system (e.g. `~/.local/share/fonts`); the web app uses the embedded copy.
 
 ## Install
 

@@ -5,7 +5,9 @@
  */
 @font-face {
   font-family: "EGA VGA";
-  src: url("data:font/ttf;base64,FONT_DATA") format("truetype");
+  /* local() d'abord : l'app de bureau bloque les polices data: (CSP) */
+  src: local("PxPlus IBM VGA 8x16"), local("PxPlus_IBM_VGA_8x16"),
+       url("data:font/ttf;base64,FONT_DATA") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -138,6 +140,15 @@
   --panel-resizer-background-color: var(--ega-lightgray);
   --link-element-color: var(--ega-lightcyan);
 }
+
+/* barre de titre (hamburger, réduire, agrandir, fermer) : bleue */
+html body #desktop-title-bar {
+  background: var(--ega-blue) !important;
+  border-bottom: 1px solid var(--ega-lightgray) !important;
+}
+html body #desktop-title-bar button svg { fill: var(--ega-white) !important; }
+html body #desktop-title-bar button:hover svg,
+html body #desktop-title-bar button:focus svg { fill: var(--ega-yellow) !important; }
 
 /* coins carrés partout */
 *, *::before, *::after {
