@@ -124,7 +124,7 @@
   --items-column-border-left-color: var(--ega-lightgray);
   --items-column-border-right-color: var(--ega-lightgray);
   --items-column-search-background-color: var(--ega-black);
-  --item-cell-selected-background-color: var(--ega-lightgray);
+  --item-cell-selected-background-color: var(--ega-blue);
   --item-cell-selected-border-left-color: var(--ega-yellow);
   --navigation-column-background-color: var(--ega-black);
   --navigation-section-title-color: var(--ega-lightcyan);
@@ -144,9 +144,17 @@
   border-radius: 0 !important;
 }
 
-/* la note sélectionnée : barre grise, texte noir (comme une sélection DOS) */
-.selected .name, .selected .note-preview, .selected .default-preview {
-  color: var(--ega-black) !important;
+/* la note active : barre bleue, titre jaune, texte blanc */
+#items-column .content-list-item.selected,
+#items-column .content-list-item:hover {
+  background-color: var(--ega-blue) !important;
+}
+#items-column .content-list-item.selected * {
+  color: var(--ega-white) !important;
+}
+#items-column .content-list-item.selected .name,
+#items-column .content-list-item.selected .name * {
+  color: var(--ega-yellow) !important;
 }
 
 /* titres en jaune */
@@ -156,7 +164,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* curseur jaune dans l'éditeur */
 textarea, input, [contenteditable="true"] {
-  caret-color: var(--ega-yellow);
+  caret-color: var(--ega-yellow) !important;
+  caret-shape: block; /* bloc dès que Chromium le permet (pas encore dans Electron 134) */
+}
+
+/* la police de Herdr (PxPlus IBM VGA 8x16) partout, éditeurs compris */
+body, input, textarea, button, select,
+#editor-column, #editor-column *, #note-text-editor,
+.super-editor, .super-editor *, #items-column *, #navigation * {
+  font-family: "EGA VGA", "PxPlus IBM VGA 8x16", monospace !important;
 }
 
 /* code : cyan sur noir */
@@ -166,6 +182,19 @@ code, pre {
 }
 
 /* barres de défilement carrées, épaisses, style DOS */
-::-webkit-scrollbar { width: 12px; height: 12px; background: var(--ega-black); }
-::-webkit-scrollbar-thumb { background: var(--ega-lightgray); border: 2px solid var(--ega-black); }
-::-webkit-scrollbar-corner { background: var(--ega-black); }
+::-webkit-scrollbar { width: 12px; height: 12px; background: transparent !important; }
+::-webkit-scrollbar-track { background: transparent !important; }
+::-webkit-scrollbar-thumb { background: var(--ega-lightgray) !important; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-corner { background: transparent !important; }
+
+/* dans la note : pas de barre de défilement du tout */
+#editor-column ::-webkit-scrollbar,
+#editor-column::-webkit-scrollbar,
+#note-text-editor::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none;
+}
+#editor-column, #editor-column *, #note-text-editor {
+  scrollbar-width: none;
+}

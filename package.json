@@ -1,6 +1,6 @@
 {
   "name": "sn-ega-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Thème EGA / DOS EDIT pour Standard Notes : palette EGA, coins carrés, police IBM VGA",
   "main": "dist/dist.css",
   "license": "MIT",
